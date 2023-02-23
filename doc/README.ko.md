@@ -36,7 +36,7 @@ $ npm i @litert/loader@dev --save
 
 ## 사용법
 
-설치 후 pkgdl 명령어를 사용하여 현재 디렉토리에서 다음과 같이 실행하면 됩니다.
+설치 후 `pkgdl` 명령어를 사용하여 현재 디렉토리에서 다음과 같이 실행하면 됩니다.
 
 ```sh
 $ pkgdl download @litert/loader@3.4.9
