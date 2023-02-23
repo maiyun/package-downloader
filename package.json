@@ -1,6 +1,6 @@
 {
   "name": "package-downloader",
-  "version": "0.0.1-dev",
+  "version": "0.0.3-dev3",
   "description": "Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.",
   "keywords": [
     "package",
@@ -11,7 +11,7 @@
   "author": "hanguoshuai",
   "license": "Apache-2.0",
   "bin": {
-    "pkgdl": "index.js"
+    "pkgdl": "./bin/pkgdl.js"
   },
   "devDependencies": {
     "@litert/eslint-plugin-rules": "^0.1.2",
