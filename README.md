@@ -29,13 +29,13 @@ Download the specified NPM package to your local directory, preserving the origi
 You can install it directly through the npm command.
 
 ```sh
-$ npm i @litert/loader --save
+$ npm i package-downloader -g
 ```
 
 Or install the latest development version to experience the latest features.
 
 ```sh
-$ npm i @litert/loader@dev --save
+$ npm i package-downloader@dev -g
 ```
 
 ## Usage

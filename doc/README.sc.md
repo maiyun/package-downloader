@@ -25,13 +25,13 @@
 你可以直接通过 npm 命令进行安装。
 
 ```sh
-$ npm i @litert/loader --save
+$ npm i package-downloader -g
 ```
 
 或者安装最新的开发版来体验最新的功能。
 
 ```sh
-$ npm i @litert/loader@dev --save
+$ npm i package-downloader@dev -g
 ```
 
 ## 使用

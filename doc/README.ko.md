@@ -25,13 +25,13 @@
 npm 명령어를 사용하여 직접 설치할 수 있습니다.
 
 ```sh
-$ npm i @litert/loader --save
+$ npm i @litert/loader -g
 ```
 
 또는 최신 개발 버전을 설치하여 최신 기능을 체험 할 수 있습니다.
 
 ```sh
-$ npm i @litert/loader@dev --save
+$ npm i @litert/loader@dev -g
 ```
 
 ## 사용법
