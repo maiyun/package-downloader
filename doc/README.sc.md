@@ -53,4 +53,4 @@ $ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
 
 ## 许可
 
-本库使用 [Apache-2.0](./LICENSE) 许可。
+本库使用 [Apache-2.0](../LICENSE) 许可。

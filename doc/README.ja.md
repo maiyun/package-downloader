@@ -53,4 +53,4 @@ $ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
 
 ## ライセンス
 
-このライブラリは [Apache-2.0](./LICENSE) ライセンスで提供されています。
+このライブラリは [Apache-2.0](../LICENSE) ライセンスで提供されています。

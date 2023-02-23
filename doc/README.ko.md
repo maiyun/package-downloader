@@ -53,4 +53,4 @@ $ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
 
 ## 라이선스
 
-본 라이브러리는 [Apache-2.0](./LICENSE) 라이선스를 사용합니다.
+본 라이브러리는 [Apache-2.0](../LICENSE) 라이선스를 사용합니다.
