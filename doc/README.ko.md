@@ -19,44 +19,40 @@
     </a>
 </p>
 
-Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.
+로컬 폴더로 NPM 패키지 파일을 다운로드하면 패키지의 원래 디렉토리 구조가 유지됩니다. CSS 및 JS 파일이 포함되어 있으면 압축 된 최소 버전이 자동으로 생성됩니다.
 
-## Languages
+## 설치
 
-[简体中文](doc/README.sc.md) | [繁體中文](doc/README.tc.md) | [日本語](doc/README.ja.md) | [한국어](doc/README.ko.md)
-
-## Installation
-
-You can install it directly through the npm command.
+npm 명령어를 사용하여 직접 설치할 수 있습니다.
 
 ```sh
 $ npm i @litert/loader --save
 ```
 
-Or install the latest development version to experience the latest features.
+또는 최신 개발 버전을 설치하여 최신 기능을 체험 할 수 있습니다.
 
 ```sh
 $ npm i @litert/loader@dev --save
 ```
 
-## Usage
+## 사용법
 
-After installation, you can use the pkgdl command directly in the current directory. For example, execute the following command:
+설치 후 pkgdl 명령어를 사용하여 현재 디렉토리에서 다음과 같이 실행하면 됩니다.
 
 ```sh
 $ pkgdl download @litert/loader@3.4.9
 ```
 
-After execution, an npm folder will be generated in the current directory, which will contain version 3.4.9 of the loader library.
+실행 후, 현재 디렉토리에는 3.4.9 버전의 로더 라이브러리가 포함 된 npm 폴더가 생성됩니다.
 
-### Download multiple libraries at once
+### 여러 라이브러리를 한 번에 다운로드
 
-Just add a space between the libraries to download multiple libraries at the same time, for example:
+공백으로 라이브러리를 구분하여 동시에 다운로드 할 수 있습니다.
 
 ```sh
-$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl download @litert/loader@3.4.9 clickgo@3.2.6
 ```
 
-## License
+## 라이선스
 
-This library is published under [Apache-2.0](./LICENSE) license.
+본 라이브러리는 [Apache-2.0](./LICENSE) 라이선스를 사용합니다.

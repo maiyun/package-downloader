@@ -19,44 +19,40 @@
     </a>
 </p>
 
-Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.
+下载 NPM 包的文件到本地文件夹，保持包内原有的目录结构。如果包含 css 和 js 文件的话则会自动生成一个 min 的压缩版。
 
-## Languages
+## 安装
 
-[简体中文](doc/README.sc.md) | [繁體中文](doc/README.tc.md) | [日本語](doc/README.ja.md) | [한국어](doc/README.ko.md)
-
-## Installation
-
-You can install it directly through the npm command.
+你可以直接通过 npm 命令进行安装。
 
 ```sh
 $ npm i @litert/loader --save
 ```
 
-Or install the latest development version to experience the latest features.
+或者安装最新的开发版来体验最新的功能。
 
 ```sh
 $ npm i @litert/loader@dev --save
 ```
 
-## Usage
+## 使用
 
-After installation, you can use the pkgdl command directly in the current directory. For example, execute the following command:
+安装后，直接在当前目录使用命令 `pkgdl` 即可，例如执行以下命令：
 
 ```sh
 $ pkgdl download @litert/loader@3.4.9
 ```
 
-After execution, an npm folder will be generated in the current directory, which will contain version 3.4.9 of the loader library.
+执行后，当前目录将生成一个 npm 文件夹，其中就会包含 loader 库的 3.4.9 的版本。
 
-### Download multiple libraries at once
+### 一次性下载多个库
 
-Just add a space between the libraries to download multiple libraries at the same time, for example:
+只需要在库中间加入空格，即可同时下载多个库，例如：
 
 ```sh
-$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl download @litert/loader@3.4.9 clickgo@3.2.6
 ```
 
-## License
+## 许可
 
-This library is published under [Apache-2.0](./LICENSE) license.
+本库使用 [Apache-2.0](./LICENSE) 许可。
