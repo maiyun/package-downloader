@@ -49,7 +49,7 @@ $ pkgdl download @litert/loader@3.4.9
 공백으로 라이브러리를 구분하여 동시에 다운로드 할 수 있습니다.
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
 ```
 
 ## 라이선스

@@ -5,6 +5,11 @@
 
 // npm publish --tag dev --access public
 
+/**
+ * --- clickgo 常用的本地库 ---
+ * pkgdl dl whatwg-fetch@3.0.0 @litert/loader@3.4.9 clickgo@3.2.6 vue@3.2.47 @juggle/resize-observer@3.4.0 jszip@3.10.0 monaco-editor@0.34.1
+ */
+
 import * as cmd from 'commander';
 import * as https from 'https';
 import * as fs from 'fs';

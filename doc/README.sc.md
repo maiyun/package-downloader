@@ -49,7 +49,7 @@ $ pkgdl download @litert/loader@3.4.9
 只需要在库中间加入空格，即可同时下载多个库，例如：
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
 ```
 
 ## 许可

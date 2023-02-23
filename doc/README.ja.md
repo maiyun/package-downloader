@@ -49,7 +49,7 @@ $ pkgdl download @litert/loader@3.4.9
 ライブラリをスペースで区切って指定するだけで、複数のライブラリを同時にダウンロードできます。例えば：
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
 ```
 
 ## ライセンス
