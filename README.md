@@ -6,7 +6,6 @@
     </a>
     <a href="https://www.npmjs.com/package/package-downloader">
         <img alt="NPM stable version" src="https://img.shields.io/npm/v/package-downloader?color=brightgreen&logo=npm" />
-        <img alt="NPM beta version" src="https://img.shields.io/npm/v/package-downloader/beta?color=yellowgreen&logo=npm" />
         <img alt="NPM development version" src="https://img.shields.io/npm/v/package-downloader/dev?color=yellow&logo=npm" />
     </a><br>
     <a href="https://github.com/maiyun/package-downloader/releases">
