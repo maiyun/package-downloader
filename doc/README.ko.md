@@ -42,7 +42,7 @@ $ npm i @litert/loader@dev --save
 $ pkgdl download @litert/loader@3.4.9
 ```
 
-실행 후, 현재 디렉토리에는 3.4.9 버전의 로더 라이브러리가 포함 된 npm 폴더가 생성됩니다.
+실행 후, 현재 디렉토리에는 3.4.9 버전의 loader 라이브러리가 포함 된 npm 폴더가 생성됩니다.
 
 ### 여러 라이브러리를 한 번에 다운로드
 
