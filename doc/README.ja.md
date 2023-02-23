@@ -1,6 +1,5 @@
 # Package Downloader
 
-<p align="center"><img src="dist/icon.png" width="68" height="68" alt="ClickGo"></p>
 <p align="center">
     <a href="https://github.com/maiyun/package-downloader/blob/master/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/maiyun/package-downloader?color=blue" />

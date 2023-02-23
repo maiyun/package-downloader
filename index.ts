@@ -1,3 +1,10 @@
+/**
+ * Project: package-downloader, User: JianSuoQiYue
+ * Date: 2023-2-23 17:39:32
+ */
+
+// npm publish --tag dev --access public
+
 import * as cmd from 'commander';
 import * as https from 'https';
 import * as fs from 'fs';
