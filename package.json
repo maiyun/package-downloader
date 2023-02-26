@@ -1,6 +1,6 @@
 {
   "name": "package-downloader",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.",
   "keywords": [
     "package",
