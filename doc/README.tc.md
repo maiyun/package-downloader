@@ -38,7 +38,7 @@ $ npm i package-downloader@dev -g
 安裝后，直接在當前目錄使用命令 `pkgdl` 即可，例如執行以下命令：
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9
+$ pkgdl @litert/loader@3.4.9
 ```
 
 執行后，當前目錄將生成一個 npm 資料夾，其中就會包含 loader 庫的 3.4.9 的版本。
@@ -48,8 +48,18 @@ $ pkgdl download @litert/loader@3.4.9
 只需要在庫中間加入空格，即可同時下載多個庫，例如：
 
 ```sh
-$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl @litert/loader@3.4.9 clickgo@3.2.6
 ```
+
+### 下載到指定資料夾
+
+使用 -p 或 --path 參數指定目錄，例如：
+
+```sh
+$ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
+```
+
+以上會在當前資料夾自動生成 sub 資料夾，並在 sub 資料夾中生成 npm 資料夾。
 
 ## 許可
 

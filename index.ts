@@ -55,7 +55,7 @@ async function build(path: string): Promise<void> {
             }
             const buf = await fs.promises.readFile(path + '/' + item);
             const rtn = cs.minify(buf.toString());
-            await fs.promises.writeFile(path + '/' + minName, rtn.styles ? '/*Minified by MAIYUN.NET using terser*/' + rtn.styles : '');
+            await fs.promises.writeFile(path + '/' + minName, rtn.styles ? '/*Minified by MAIYUN.NET using clean-css*/' + rtn.styles : '');
             console.log('Build ' + path + '/' + minName + ' successful.');
             continue;
         }
@@ -71,11 +71,18 @@ program
 
 // --- 下载包 ---
 program
-    .command('download')
-    .description('download one or more packages, separated by spaces')
-    .aliases(['dl', 'down'])
+    .option('-p, --path <path>', 'generated path')
     .argument('<pkgs...>')
     .action(async function(pkgs: string[]) {
+        const opts = program.opts();
+        /** --- 前置目录 --- */
+        let prePath = '';
+        if (opts.path) {
+            prePath = opts.path;
+            if (!prePath.endsWith('/')) {
+                prePath += '/';
+            }
+        }
         for (const pkg of pkgs) {
             const sp = pkg.lastIndexOf('@');
             if (sp <= 0) {
@@ -93,7 +100,7 @@ program
             const url = 'https://registry.npmjs.org/' + full + '/-/' + name + '-' + ver + '.tgz';
             console.log('Downloading ' + url + ' ...');
             try {
-                await fs.promises.mkdir('npm/' + pkg + '/', {
+                await fs.promises.mkdir(prePath + 'npm/' + pkg + '/', {
                     'recursive': true
                 });
             }
@@ -101,7 +108,7 @@ program
                 console.log('mkdir error', e);
             }
             await new Promise<void>((resolve) => {
-                const ws = fs.createWriteStream('npm/' + name + '.tgz');
+                const ws = fs.createWriteStream(prePath + 'npm/' + name + '.tgz');
                 https.get(url, (response) => {
                     const totalLength = parseInt(response.headers['content-length'] ?? '0', 10);
                     let downloadedLength = 0;
@@ -116,25 +123,28 @@ program
                         console.log(`File ${name}.tgz downloaded to the npm directory.`);
                         // --- 开始解压 ---
                         console.log('Extracting...');
-                        fs.createReadStream('npm/' + name + '.tgz').pipe(tar.x({
+                        fs.createReadStream(prePath + 'npm/' + name + '.tgz').pipe(tar.x({
                             'strip': 1,
-                            'cwd': 'npm/' + pkg + '/'
-                        })).on('finish', async () => {
+                            'cwd': prePath + 'npm/' + pkg + '/'
+                        })).on('finish', () => {
                             console.log(`File ${name}.tgz done.`);
                             // --- 删除 tgz 文件 ---
-                            fs.unlink('npm/' + name + '.tgz', () => {
+                            fs.unlink(prePath + 'npm/' + name + '.tgz', () => {
                                 console.log('Unlink ' + name + '.tgz successful.');
                             });
                             // --- 生成 JS 和 CSS 的 min 版本 ---
-                            await build('npm/' + pkg);
-                            resolve();
+                            build(prePath + 'npm/' + pkg).then(() => {
+                                resolve();
+                            }).catch(() => {
+                                resolve();
+                            });
                         }).on('error', () => {
                             console.log(`File ${name}.tgz error.`);
                             resolve();
                         });
                     });
                 }).on('error', (error) => {
-                    fs.unlink('npm/' + name + '.tgz', () => {
+                    fs.unlink(prePath + 'npm/' + name + '.tgz', () => {
                         console.error(`Error downloading file: ${error}`);
                     });
                     resolve();

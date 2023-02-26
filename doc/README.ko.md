@@ -38,7 +38,7 @@ $ npm i @litert/loader@dev -g
 설치 후 `pkgdl` 명령어를 사용하여 현재 디렉토리에서 다음과 같이 실행하면 됩니다.
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9
+$ pkgdl @litert/loader@3.4.9
 ```
 
 실행 후, 현재 디렉토리에는 3.4.9 버전의 loader 라이브러리가 포함 된 npm 폴더가 생성됩니다.
@@ -48,8 +48,18 @@ $ pkgdl download @litert/loader@3.4.9
 공백으로 라이브러리를 구분하여 동시에 다운로드 할 수 있습니다.
 
 ```sh
-$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl @litert/loader@3.4.9 clickgo@3.2.6
 ```
+
+### 특정 폴더에 다운로드하기
+
+-p 또는 --path 옵션을 사용하여 디렉토리를 지정할 수 있습니다. 예시:
+
+```sh
+$ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
+```
+
+위 명령어는 현재 폴더에 sub 폴더를 자동으로 생성하고 sub 폴더 안에 npm 폴더를 생성합니다.
 
 ## 라이선스
 

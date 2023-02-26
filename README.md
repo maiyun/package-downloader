@@ -42,7 +42,7 @@ $ npm i package-downloader@dev -g
 After installation, you can use the pkgdl command directly in the current directory. For example, execute the following command:
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9
+$ pkgdl @litert/loader@3.4.9
 ```
 
 After execution, an npm folder will be generated in the current directory, which will contain version 3.4.9 of the loader library.
@@ -52,8 +52,18 @@ After execution, an npm folder will be generated in the current directory, which
 Just add a space between the libraries to download multiple libraries at the same time, for example:
 
 ```sh
-$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl @litert/loader@3.4.9 clickgo@3.2.6
 ```
+
+### Download to a specified directory
+
+Use the -p or --path parameter to specify the directory, for example:
+
+```sh
+$ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
+```
+
+This will automatically create a sub folder in the current directory, and generate an npm folder within the sub folder.
 
 ## License
 

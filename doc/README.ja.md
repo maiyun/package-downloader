@@ -38,7 +38,7 @@ $ npm i package-downloader@dev -g
 インストール後、現在のディレクトリで `pkgdl` コマンドを実行するだけです。たとえば、以下のコマンドを実行します。
 
 ```sh
-$ pkgdl download @litert/loader@3.4.9
+$ pkgdl @litert/loader@3.4.9
 ```
 
 実行後、現在のディレクトリに npm フォルダが生成され、その中には loader ライブラリの3.4.9バージョンが含まれています。
@@ -48,8 +48,18 @@ $ pkgdl download @litert/loader@3.4.9
 ライブラリをスペースで区切って指定するだけで、複数のライブラリを同時にダウンロードできます。例えば：
 
 ```sh
-$ pkgdl dl @litert/loader@3.4.9 clickgo@3.2.6
+$ pkgdl @litert/loader@3.4.9 clickgo@3.2.6
 ```
+
+### 指定したフォルダにダウンロードする
+
+-p または --path パラメーターを使用してディレクトリを指定してください。例：
+
+```sh
+$ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
+```
+
+上記は現在のフォルダに sub フォルダを自動生成し、その中に npm フォルダを生成します。
 
 ## ライセンス
 
