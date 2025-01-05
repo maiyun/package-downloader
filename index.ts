@@ -67,11 +67,12 @@ const program = new cmd.Command();
 program
     .name('package-downloader')
     .description('Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.')
-    .version('0.2.1', '-v, --version');
+    .version('0.2.2', '-v, --version');
 
 // --- 下载包 ---
 program
     .option('-p, --path <path>', 'generated path')
+    .option('-l, --location <location>', 'mirror location')
     .argument('<pkgs...>')
     .action(async function(pkgs: string[]) {
         const opts = program.opts();
@@ -97,7 +98,7 @@ program
             /** --- 包版本 --- */
             const ver = pkg.slice(sp + 1);
             /** --- 下载的 url --- */
-            const url = 'https://registry.npmjs.org/' + full + '/-/' + name + '-' + ver + '.tgz';
+            const url = (opts.location === 'cn' ? 'https://registry.npmmirror.com/' : 'https://registry.npmjs.org/') + full + '/-/' + name + '-' + ver + '.tgz';
             console.log('Downloading ' + url + ' ...');
             try {
                 await fs.promises.mkdir(prePath + 'npm/' + pkg + '/', {
