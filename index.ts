@@ -67,7 +67,7 @@ const program = new cmd.Command();
 program
     .name('package-downloader')
     .description('Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.')
-    .version('0.2.2', '-v, --version');
+    .version('0.2.3', '-v, --version');
 
 // --- 下载包 ---
 program
