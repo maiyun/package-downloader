@@ -11,6 +11,7 @@
  */
 
 import * as cmd from 'commander';
+import * as http from 'http';
 import * as https from 'https';
 import * as fs from 'fs';
 import * as tar from 'tar';
@@ -62,12 +63,33 @@ async function build(path: string): Promise<void> {
     }
 }
 
+/** --- 网络请求 --- */
+function get(
+    url: string, callback: (res: http.IncomingMessage) => void, error: (error: Error) => void
+): void {
+    https.get(url, (response) => {
+        if (response.statusCode === 301 || response.statusCode === 302) {
+            if (!response.headers.location) {
+                callback(response);
+                return;
+            }
+            https.get(response.headers.location, callback).on('error', error);
+            return;
+        }
+        callback(response);
+    }).on('error', (e) => {
+        error(e);
+    });
+}
+
+// --- 正式创建 ---
+
 const program = new cmd.Command();
 
 program
     .name('package-downloader')
     .description('Download the specified NPM package to your local directory, preserving the original file structure. A compressed version of the CSS and JS files will be automatically generated.')
-    .version('0.2.3', '-v, --version');
+    .version('0.2.4', '-v, --version');
 
 // --- 下载包 ---
 program
@@ -110,7 +132,7 @@ program
             }
             await new Promise<void>((resolve) => {
                 const ws = fs.createWriteStream(prePath + 'npm/' + name + '.tgz');
-                https.get(url, (response) => {
+                get(url, (response) => {
                     const totalLength = parseInt(response.headers['content-length'] ?? '0', 10);
                     let downloadedLength = 0;
                     response.on('data', (chunk) => {
@@ -124,10 +146,16 @@ program
                         console.log(`File ${name}.tgz downloaded to the npm directory.`);
                         // --- 开始解压 ---
                         console.log('Extracting...');
+                        /** --- 是否下载成功 --- */
+                        let successful = true;
                         fs.createReadStream(prePath + 'npm/' + name + '.tgz').pipe(tar.x({
                             'strip': 1,
                             'cwd': prePath + 'npm/' + pkg + '/'
                         })).on('finish', () => {
+                            if (!successful) {
+                                resolve();
+                                return;
+                            }
                             console.log(`File ${name}.tgz done.`);
                             // --- 删除 tgz 文件 ---
                             fs.unlink(prePath + 'npm/' + name + '.tgz', () => {
@@ -139,12 +167,14 @@ program
                             }).catch(() => {
                                 resolve();
                             });
-                        }).on('error', () => {
+                        }).on('error', (e) => {
+                            console.log('xxx', e);
+                            successful = false;
                             console.log(`File ${name}.tgz error.`);
                             resolve();
                         });
                     });
-                }).on('error', (error) => {
+                }, (error) => {
                     fs.unlink(prePath + 'npm/' + name + '.tgz', () => {
                         console.error(`Error downloading file: ${error}`);
                     });
