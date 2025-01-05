@@ -61,6 +61,14 @@ $ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
 
 위 명령어는 현재 폴더에 sub 폴더를 자동으로 생성하고 sub 폴더 안에 npm 폴더를 생성합니다.
 
+### 중국 본토 미러
+
+중국 본토에서 사용 중이라면 -l 또는 --location 파라미터를 사용하고 그 뒤에 cn을 입력하여 중국 본토의 미러 패키지를 다운로드할 수 있습니다. 예를 들어:
+
+```sh
+$ pkgdl -l cn @litert/loader@3.4.9 clickgo@3.2.6
+```
+
 ## 라이선스
 
 본 라이브러리는 [Apache-2.0](../LICENSE) 라이선스를 사용합니다.

@@ -61,6 +61,14 @@ $ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
 
 以上會在當前資料夾自動生成 sub 資料夾，並在 sub 資料夾中生成 npm 資料夾。
 
+### 中國大陸鏡像
+
+如果你在中國大陸地區使用，可以使用 -l 或 --location 參數，後面跟隨 cn，即可下載中國大陸的鏡像包，例如：
+
+```sh
+$ pkgdl -l cn @litert/loader@3.4.9 clickgo@3.2.6
+```
+
 ## 許可
 
 本庫使用 [Apache-2.0](../LICENSE) 許可。

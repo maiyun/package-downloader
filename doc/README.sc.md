@@ -61,6 +61,14 @@ $ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
 
 以上会在当前文件夹自动生成 sub 文件夹，并在 sub 文件夹中生成 npm 文件夹。
 
+### 中国大陆镜像
+
+如果你在中国大陆地区使用，可以使用 -l 或 --location 参数，后面跟随 cn，即可下载中国大陆的镜像包，例如：
+
+```sh
+$ pkgdl -l cn @litert/loader@3.4.9 clickgo@3.2.6
+```
+
 ## 许可
 
 本库使用 [Apache-2.0](../LICENSE) 许可。

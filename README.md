@@ -65,6 +65,14 @@ $ pkgdl -p sub @litert/loader@3.4.9 clickgo@3.2.6
 
 This will automatically create a sub folder in the current directory, and generate an npm folder within the sub folder.
 
+### China Mainland Mirror
+
+If you're using it in China Mainland, you can use the -l or --location option followed by cn to download the mirror package for China Mainland. For example:
+
+```sh
+$ pkgdl -l cn @litert/loader@3.4.9 clickgo@3.2.6
+```
+
 ## License
 
 This library is published under [Apache-2.0](./LICENSE) license.
